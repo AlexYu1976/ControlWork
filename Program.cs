@@ -1,4 +1,13 @@
-﻿
+﻿Console.WriteLine("Введите количество слов в массиве ");
+int length = Convert.ToInt32(Console.ReadLine());
+double[] array = new double[length];
+
+for (int i = 0; i < length; i++)
+{
+    Console.WriteLine($"Введите {i} элемент массива");
+    array[i] = Convert.ToDouble(Console.ReadLine());
+}
+
 
 string[] startarray = new string[] { "Home", "Add", "Brase", "Cap", "On" };
 string[] finisharray = new string[startarray.Length];
