@@ -1,37 +1,42 @@
-﻿Console.WriteLine("Введите количество слов в массиве ");
+﻿Console.WriteLine("Введите количество элемнтов в массиве :\t  ");
 int length = Convert.ToInt32(Console.ReadLine());
-double[] array = new double[length];
+string [] StartArray = new string[length];
+
 
 for (int i = 0; i < length; i++)
 {
-    Console.WriteLine($"Введите {i} элемент массива");
-    array[i] = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine($"\nВведите {i} элемент массива :\t");
+    StartArray[i] = Console.ReadLine();
 }
 
 
-string[] startarray = new string[] { "Home", "Add", "Brase", "Cap", "On" };
-string[] finisharray = new string[startarray.Length];
-void SelectArray(string[] startarray, string[] finisharray)
+string[] FinishArray = new string[StartArray.Length];
+
+void PrintArray(string[] StartArray)
+{
+    for (int i = 0; i < StartArray.Length; i++)
+    {
+        Console.Write($"{StartArray[i]} ");
+    }
+    Console.WriteLine();
+}
+
+PrintArray(StartArray);
+
+void CountingArray(string[] StartArray, string[] FinishArray)
 {
     int count = 0;
-    for (int i = 0; i < startarray.Length; i++)
+    for (int i = 0; i < StartArray.Length; i++)
     {
-        if (startarray[i].Length <= 3)
+        if (StartArray[i].Length <= 3)
         {
-            finisharray[count] = startarray[i];
+            FinishArray[count] = StartArray[i];
             count++;
         }
         
     }
 
 }
-void PrintArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"{array[i]} ");
-    }
-    Console.WriteLine();
-}
-SelectArray(startarray, finisharray);
-PrintArray(finisharray);
+
+CountingArray(StartArray, FinishArray);
+PrintArray(FinishArray);
